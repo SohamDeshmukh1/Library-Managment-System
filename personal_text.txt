@@ -1,0 +1,23 @@
+
+Added Unique key to the data base so no similar name accs will get added
+it dosent work idk how to work it out 
+-------------------------------------------------------------------------------
+making login page todat and then the Librabry managment interface
+-------------------------------------------------------------------------------
+Session is made i guess for starting us something 
+and then i am rediricting the person to some other php webpage
+-------------------------------------------------------------------------------
+signup page completed, Login Page completed 
+Welcome page completed
+
+delete books,add books,view books, when logged in this 3 options will be
+accessable to the person 
+-------------------------------------------------------------------------------
+data base created are 1] Users,2]library
+in users there are 4 sections"srno,username,password,dt"
+
+i have set dt as timestamp so it will also show when the record was 
+created
+-------------------------------------------------------------------------------
+1 issue when i add more record the sr primary key does not decrement when record removed
+dont know how to solve

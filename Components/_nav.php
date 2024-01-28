@@ -20,10 +20,6 @@
       </ul>
       <ul class="navbar-nav ml-auto"> 
         <li class="nav-item">
-          <a class="nav-link active" href="/Microproject/about.php">About us
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link active" href="/Microproject/logout.php">Logout</a>
         </li>
       </ul>

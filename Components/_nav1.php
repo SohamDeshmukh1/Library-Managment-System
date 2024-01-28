@@ -17,7 +17,7 @@
           </a>
           
         <li class="nav-item">
-          <a class="nav-link active" role="button">View Books</a>
+          <a class="nav-link active" href="view.php" role="button">View Books</a>
         </li>
       </ul>
     </div>

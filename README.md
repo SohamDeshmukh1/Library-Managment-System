@@ -31,7 +31,6 @@ View List:
 
 
 
-
-Project Is still Under Development
+Project Still have a ton of room for imrpovement feel free to do it 
 
 

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
-        header("Location: Books/view.php");
+        header("Location: Books/landing.php");
     } else {
        $error = true;
     }

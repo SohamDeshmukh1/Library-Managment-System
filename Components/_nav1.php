@@ -15,7 +15,9 @@
           <a class="nav-link active" href="/Microproject/Books/#">
             Delete Book
           </a>
-          
+           <li class="nav-item">
+          <a class="nav-link active" href="/Microproject/Books/find.php">Find Book</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link active" href="view.php" role="button">View Books</a>
         </li>

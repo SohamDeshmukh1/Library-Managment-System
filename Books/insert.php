@@ -1,31 +1,38 @@
-<?php include '../Components/_nav1.php'; ?>
+<?php require '../Components/_nav1.php'; ?>
 <?php
-$login = false;
-$error = false;
+$showAlert = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'Components/_dbconnect.php';
+    include '../Components/_dbconnect2.php';
 
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $bookname = $_POST["bookname"];
+    $author = $_POST["author"];
+        // Check if bookname already exists
+    $checkbooknameQuery = "SELECT * FROM `books` WHERE `bookname` = '$bookname'";
+    $checkbooknameResult = mysqli_query($con, $checkbooknameQuery);
+    if (!empty($author)) {
 
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
 
-    $num = mysqli_num_rows($result);
+        $sql = "INSERT INTO `books` (`bookname`, `author`) VALUES ('$bookname', '$author')";
 
-    if ($num == 1) {
-        $login = true;
-        session_start();
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
-        header("Location: Books/landing.php");
+        // SQL query execution for connecting and transferring the data to the database
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            $showAlert = true;
+            header("Location: /Microproject/Books/view.php");
+            exit();
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
     } else {
-       $error = true;
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> Something is Wrong.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
     }
 }
 ?>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -34,37 +41,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
+
 <?php
-if ($login) {
+if ($showAlert) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> You are logged in
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
-}
-if ($error) {
-    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <strong>Login Failed!</strong>
+          <strong>Success!</strong> User registered successfully. You may now login.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
 }
 ?>
-<div style="margin-top: 25px;" class="container">
-<h1 class="text-center" >Add Books</h1>
+
+<h1 class="text-center">Add Books</h1>
 
 <div class="container my-4">
-    <form action="/Microproject/login.php" method="post">
+    <form action="/Microproject/Books/insert.php" method="post">
         <div class="form-group">
-            <label for="bookname" class="form-label">Book Name</label>
+            <label for="bookname" class="form-label">Bookname</label>
             <input type="text" class="form-control" id="bookname" name="bookname" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-            <label for="author" class="form-label">Author</label>
+            <label for="author" class="form-label">author</label>
             <input type="text" class="form-control" id="author" name="author">
         </div>
-        
-        <button style="margin-top: 20px;" type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
 </div>
-</div>
+
 </body>
 </html>

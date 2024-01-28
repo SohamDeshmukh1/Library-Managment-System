@@ -13,9 +13,9 @@
           <div class="col">
             <div class="card bg-dark text-white">
               <div class="card-body">
-                <h5 class="card-title">Delete Data</h5>
+                <h5 class="card-title">Delete Data of book</h5>
                 <p class="card-text">If admin wants to Delete books from the database, Admin can access this place and delete books  </p>
-                <a href="#" class="btn btn-primary">Delete Books</a>
+                <a href="delete.php" class="btn btn-primary">Delete Books</a>
               </div>
             </div>
           </div>

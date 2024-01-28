@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result) {
             $showAlert = true;
-            header("Location: /Microproject/Books/view.php");
+            // header("Location: /Microproject/Books/view.php"); Optional
             exit();
         } else {
             echo "Error: " . mysqli_error($conn);
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 if ($showAlert) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> User registered successfully. You may now login.
+          <strong>Data Inserted</strong>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
 }
@@ -56,13 +56,14 @@ if ($showAlert) {
 <div class="container my-4">
     <form action="/Microproject/Books/insert.php" method="post">
         <div class="form-group">
-            <label for="bookname" class="form-label">Bookname</label>
+            <label for="bookname" class="form-label"style="font-weight: bold;">Bookname</label>
             <input type="text" class="form-control" id="bookname" name="bookname" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-            <label for="author" class="form-label">author</label>
+            <label for="author" class="form-label" style="font-weight: bold;">Author</label>
             <input type="text" class="form-control" id="author" name="author">
         </div>
+        <br>
         <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
 </div>

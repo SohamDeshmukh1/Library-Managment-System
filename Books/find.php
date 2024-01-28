@@ -58,17 +58,17 @@ if ($error) {
 <h1 class="text-center" >Find Book</h1>
 
 <div class="container my-4">
-    <form action="/Microproject/Books/insert.php" method="post">
+    <form action="/Microproject/Books/find.php" method="post">
         <div class="form-group">
-            <label for="bookname" class="form-label">Book Name</label>
+            <label for="bookname" class="form-label"style="font-weight: bold;">Book Name</label>
             <input type="text" class="form-control" id="bookname" name="bookname" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-            <label for="author" class="form-label">Author</label>
+            <label for="author" class="form-label"style="font-weight: bold;">Author</label>
             <input type="text" class="form-control" id="author" name="author">
         </div>
         
-        <button style="margin-top: 20px;" type="submit" class="btn btn-primary">Add Book</button>
+        <button style="margin-top: 20px;" type="submit" class="btn btn-primary">Find Book</button>
     </form>
 </div>
 </div>

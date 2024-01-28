@@ -12,7 +12,7 @@
         <li class="nav-item">
           <a class="nav-link active" href="/Microproject/Books/insert.php">Add Book</a>
         </li>
-          <a class="nav-link active" href="/Microproject/Books/#">
+          <a class="nav-link active" href="/Microproject/Books/delete.php">
             Delete Book
           </a>
            <li class="nav-item">

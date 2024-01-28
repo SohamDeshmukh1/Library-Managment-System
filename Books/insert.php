@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result) {
             $showAlert = true;
             // header("Location: /Microproject/Books/view.php"); Optional
-            exit();
         } else {
             echo "Error: " . mysqli_error($conn);
         }
@@ -45,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 if ($showAlert) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Data Inserted</strong>
+          <strong>Data Inserted!</strong> You may check table for confirmation 
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
 }

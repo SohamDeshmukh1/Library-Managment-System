@@ -22,8 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result) {
             $showAlert = true;
-            header("Location: /Microproject/signup.php");
-            exit();
+
         } else {
             echo "Error: " . mysqli_error($conn);
         }
